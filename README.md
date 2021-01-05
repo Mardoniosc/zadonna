@@ -1,4 +1,4 @@
-# angular_nativescript_shared_code_base_app
+# ZADONNA MODA OFICIAL
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.0.
 
