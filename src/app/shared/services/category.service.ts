@@ -8,7 +8,7 @@ import { Category } from "../models";
   providedIn: "root",
 })
 export class CategoryService {
-  private basePath = "api/categorys";
+  private basePath = "api/categories";
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +16,7 @@ export class CategoryService {
     const url = this.basePath + "?" + urlParams;
 
     return this.http.get(url).pipe(
-      map(this.jsonDataToCategorys),
+      map(this.jsonDataToCategories),
       map((movies) => movies.sort((a, b) => b.id - a.id)),
       catchError(this.handleError)
     );
@@ -30,7 +30,7 @@ export class CategoryService {
       .pipe(map(this.jsonDataToCategory), catchError(this.handleError));
   }
 
-  getCategorysToWatchNext(): Observable<Category[]> {
+  getCategoriesToWatchNext(): Observable<Category[]> {
     return this.getAll("toWatchNext=true");
   }
 
@@ -61,12 +61,12 @@ export class CategoryService {
   // PRIVATE METHODS
   // ---------------------------------
 
-  private jsonDataToCategorys(jsonData: any[]): Category[] {
-    const categorys: Category[] = [];
+  private jsonDataToCategories(jsonData: any[]): Category[] {
+    const categories: Category[] = [];
 
-    jsonData.forEach((element) => categorys.push(Category.fromJson(element)));
+    jsonData.forEach((element) => categories.push(Category.fromJson(element)));
 
-    return categorys;
+    return categories;
   }
 
   private jsonDataToCategory(jsonData: any): Category {
