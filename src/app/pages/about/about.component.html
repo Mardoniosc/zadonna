@@ -1,0 +1,18 @@
+<div class="jumbotron text-center jumbotron-fluid mt-3 rounded shadow-lg">
+    <div class="container">
+        <img [src]="imagePath" height="200">
+        <P class="font-weight-bold text-muted mt-5">
+            {{title}}
+        </P>
+        <P class="font-weight-bold text-uppercase">
+            {{name}}
+        </P>
+        <P class="text-muted">
+            {{description}}
+        </P>
+
+        <button class="btn btn-dark btn-lg mt-5 shadow" routerLink="">
+            {{buttonText}}
+        </button>
+    </div>
+</div>
