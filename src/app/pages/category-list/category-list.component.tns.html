@@ -1,1 +1,26 @@
-<Button text="category-list works!" class="btn btn-primary"></Button>
+<Page>
+    <ActionBar>
+        <GridLayout rows="*, *, *">
+            <Button row="0" class="show-drawer-btn" text="☰"></Button>
+
+            <Label row="1" class="page-title" text="Gerenciar categorias"></Label>
+            
+            <Label row="2" class="page-subtitle" text="Lista de categorias disponíveis" ></Label>
+        </GridLayout>
+    </ActionBar>
+
+    <StackLayout>
+        <ListView [items]="categories">
+            <ng-template let-category="item">
+                <GridLayout class="category-container" columns="auto, *, auto">
+                    <Image col="0" src="~/{{category.img}}"></Image>
+                    <StackLayout col="1">
+                        <Label class="category-name" [text]="category.name" textWrap="true"></Label>
+                        <Label class="category-description" [text]="category.description" textWrap="true"></Label>
+                    </StackLayout>
+                    <Label class="delete-category-btn" col="2" text="❌"></Label>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+</Page>
