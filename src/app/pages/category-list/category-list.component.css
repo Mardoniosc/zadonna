@@ -1,0 +1,12 @@
+.category-container {
+    height: 235px;
+}
+
+.category-container .card-title {
+    color: var(--dark-color-one);
+}
+
+.img-category {
+    height: 90px;
+    border-radius: 50%;
+}
