@@ -12,7 +12,7 @@ export class AboutComponent implements OnInit {
   imagePath = "assets/logo.png"
   title = 'ZADONNA MODA OFICIAL'
   name = 'Sistema de loja online ZADONNA com as peças disponíveis'
-  description = 'Loja de roupas destinada a mulheres, com estilo próprios.'
+  description = 'A moda é uma pintura e você é o quadro.'
   buttonText = 'SAIBA MAIS' 
 
   ngOnInit() {
