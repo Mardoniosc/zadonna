@@ -12,6 +12,8 @@ export class CategoryListComponent implements OnInit {
 
   categories: Category[] = [];
   newCategory: string = "";
+  imagePath = "assets/logo.png"
+
 
   ngOnInit() {
     this.loadCategory();
@@ -25,7 +27,10 @@ export class CategoryListComponent implements OnInit {
     const category = Category.fromJson({ name: this.newCategory });
 
     this.categoryService.create(category).subscribe(
-      (category) => this.categories.unshift(category),
+      (category) => {
+        this.categories.unshift(category);
+        this.newCategory = "";
+      },
       (err) => console.error(err)
     );
   }

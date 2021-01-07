@@ -10,10 +10,20 @@
     </ActionBar>
 
     <StackLayout>
+
+        <!-- new category container -->
+        <GridLayout class="new-category-container" columns="*, auto">
+            <TextField [(ngModel)]="newCategory" col="0" hint="Nome da categoria"></TextField>
+    
+            <Button col="1" text="+" (tap)="createCategory()"></Button>
+        </GridLayout>
+
+        <!-- category list -->
         <ListView [items]="categories">
             <ng-template let-category="item">
                 <GridLayout class="category-container" columns="auto, *, auto">
-                    <Image col="0" src="~/{{category.img}}"></Image>
+                    <Image col="0" src="~/{{category.img}}" *ngIf="category.img"></Image>
+                    <Image col="0" src="~/{{imagePath}}" *ngIf="!category.img"></Image>
                     <StackLayout col="1">
                         <Label class="category-name" [text]="category.name" textWrap="true"></Label>
                         <Label class="category-description" [text]="category.description" textWrap="true"></Label>
