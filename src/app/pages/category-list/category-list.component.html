@@ -5,9 +5,26 @@
 </nav>
 
 <div class="rounded shadow-lg p-3">
+
+  <!-- page title -->
   <h1>CATEGORIAS</h1>
   <h4>Lista de todas as categorias dísponiveis</h4>
 
+  <!-- new category container -->
+  <div class="new-category-container card shadow rounded">
+    <div class="card-body">
+      <div class="row">
+        <div class="form-group col-10">
+          <input type="text" [(ngModel)]="newCategory" class="form-control" placeholder="Categoria">
+        </div>
+        <div class="form-group col-2 text-right">
+          <button type="submit" class="btn btn-dark" (click)="createCategory()">+ Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- category list -->
   <div class="row">
     <div class="col-md-6 mt-4" *ngFor="let category of categories">
       <div class="card category-container">

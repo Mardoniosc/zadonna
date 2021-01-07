@@ -11,9 +11,23 @@ export class CategoryListComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
 
   categories: Category[] = [];
+  newCategory: string = "";
 
   ngOnInit() {
     this.loadCategory();
+  }
+
+  createCategory() {
+    if (!this.newCategory) {
+      return;
+    }
+
+    const category = Category.fromJson({ name: this.newCategory });
+
+    this.categoryService.create(category).subscribe(
+      (category) => this.categories.unshift(category),
+      (err) => console.error(err)
+    );
   }
 
   private loadCategory() {
